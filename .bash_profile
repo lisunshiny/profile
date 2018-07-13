@@ -108,8 +108,15 @@ parse_git_branch() {
 }
 
 
-# TODO: Make each line of the terminal output one of my favorite emojis at random
-# Removed the \h (hostname) from this because its an ugly device management name now :(
-export PS1="🏞  \W\[\033[95m\]\$(parse_git_branch)\[\033[00m\] $ "
+# emoji thing
+random_emoji() {
+  # TODO figure out how to get support for multi-byte UTF characters
+  emoji="😁😂😃😄😉😋😜😱🙀🙅🙋🙌🙏🚀🚨⛄⭐🌈🌱🍆🍕🍑🍟🎉🐙🐑🐯👀💁💅💖💩💸💾🔮💭😎😇🌳🍋💥"
 
-~                                                                                                                                                                                                                                             
+  size=${#emoji}
+  rng=$(($RANDOM % $size))
+
+  echo ${emoji:$rng:1}
+}
+
+export PS1="\$(random_emoji) \W\[\033[95m\]\[\033[00m\] $ "
