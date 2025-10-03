@@ -49,6 +49,8 @@ gp() {
 alias dt='cd ~/desktop'
 alias dl='cd ~/Downloads'
 alias qu='cd ~/desktop/queries'
+alias ws='cd ~/workspace'
+
 alias be='bundle exec'
 alias ber='bundle exec rake'
 alias rs='bundle exec rails s'
